@@ -60,34 +60,17 @@ public class GameInput : MonoBehaviour
 
     void Move()
     {
-        direction = Vector2.zero;
-        if (!invert)
+        float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        if (invert)
         {
-            if (Input.GetKey(KeyCode.D))
-            {
-                direction = Vector2.right;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                direction = Vector2.left;
-            }
+            move *= -1;
         }
-        else
-        {
-            if (Input.GetKey(KeyCode.D))
-            {
-                direction = Vector2.left;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                direction = Vector2.right;
-            }
-        }
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(move, 0, 0);
     }
 
-    public void OnColliderStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hi");
         if (other.gameObject.layer.Equals("Background_White"))
         {
             invert = false;
