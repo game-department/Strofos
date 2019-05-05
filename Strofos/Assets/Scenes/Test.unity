@@ -644,6 +644,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271589202}
   m_CullTransparentMesh: 0
+--- !u!1 &299310907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299310909}
+  - component: {fileID: 299310908}
+  m_Layer: 0
+  m_Name: Time Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &299310908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299310907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f7aae422f05c14488476ed60a2cddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 226295010}
+--- !u!4 &299310909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299310907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5776466, y: -1.6474758, z: 0.17773438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474937658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,12 +1125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744af088a5c5ce34c8cc2ea8bf0e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 226295010}
-  timeCount:
-  - 10
-  - 10
-  - 10
-  - 10
+  timeOffset: 10
+  time: 0
 --- !u!1 &1000999729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,12 +1673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744af088a5c5ce34c8cc2ea8bf0e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 226295010}
-  timeCount:
-  - 10
-  - 10
-  - 10
-  - 10
+  timeOffset: 10
+  time: 0
 --- !u!1 &1518183694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,7 +2023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -0.0000076293945}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0}
   m_SizeDelta: {x: 0, y: -0.000015259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647090103
@@ -10631,12 +10667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744af088a5c5ce34c8cc2ea8bf0e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 226295010}
-  timeCount:
-  - 10
-  - 10
-  - 10
-  - 10
+  timeOffset: 10
+  time: 0
 --- !u!1 &1932577934
 GameObject:
   m_ObjectHideFlags: 0
@@ -10756,12 +10788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744af088a5c5ce34c8cc2ea8bf0e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 226295010}
-  timeCount:
-  - 10
-  - 10
-  - 10
-  - 10
+  timeOffset: 10
+  time: 0
 --- !u!1 &1938523828
 GameObject:
   m_ObjectHideFlags: 0

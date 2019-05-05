@@ -1,59 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField] private float timeOffset;
+    public float time;
+    private Timer objects;
 
-    public Text timer;
-    public float [] timeCount = new float[4]
+    private void Start()
     {
-        10,10,10,10
-    };
-
-    void Update()
-    {
-
+        time = timeOffset;
+        objects = GetComponent<Timer>();
     }
 
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag.Equals("Player"))
-    //    {
-    //        isPlayer = true;
-    //    }
-    //}
-
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        float counter;
         if (collision.gameObject.tag.Equals("Player"))
         {
-            if (this.tag.Equals("B1"))
-            {
-                timeCount[0] -= 0.01f;
-                counter = Mathf.Round(timeCount[0]);
-                timer.text = counter.ToString();
-            }
-            if (this.tag.Equals("B2"))
-            {
-                timeCount[1] -= 0.01f;
-                counter = Mathf.Round(timeCount[1]);
-                timer.text = counter.ToString();
-            }
-            if (this.tag.Equals("B3"))
-            {
-                timeCount[2] -= 0.01f;
-                counter = Mathf.Round(timeCount[2]);
-                timer.text = counter.ToString();
-            }
-            if (this.tag.Equals("B4"))
-            {
-                timeCount[3] -= 0.01f;
-                counter = Mathf.Round(timeCount[3]);
-                timer.text = counter.ToString();
-            }
+            if (!TimerManagement.antrian.Contains(objects)) TimerManagement.antrian.Enqueue(objects);
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Player"))
+        {
+            if (TimerManagement.antrian.Contains(objects)) TimerManagement.antrian.Dequeue();
         }
     }
 }

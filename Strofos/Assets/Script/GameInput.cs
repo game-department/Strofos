@@ -13,21 +13,25 @@ public class GameInput : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     public LayerMask layer;
-
+    
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
+    void FixedUpdate()
+    {
+        Move();
+    }
+
     void Update()
     {
         Jump();
-        Move();
     }
 
     bool isGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.down, 1f, layer);
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.down, 0.7f, layer);
 
         if (hit)
         {
