@@ -7,7 +7,7 @@ public class GameInput : MonoBehaviour
 
     public float speed;
     public float jumpForce;
-    public bool invert;
+    public static bool invert;
 
     public Vector2 direction;
 
@@ -26,12 +26,13 @@ public class GameInput : MonoBehaviour
 
     void Update()
     {
+        changeGravity();
         Jump();
     }
 
     bool isGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.down, 0.7f, layer);
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, invert ? Vector2.up : Vector2.down, 0.7f, layer);
 
         if (hit)
         {
@@ -55,7 +56,7 @@ public class GameInput : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.S))
                 {
-                    rigidBody.AddForce(Vector2.up * jumpForce);
+                    rigidBody.AddForce(Vector2.down * jumpForce);
                 }
             }
 
@@ -65,14 +66,20 @@ public class GameInput : MonoBehaviour
     void Move()
     {
         float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        if (invert)
+        /*if (invert)
         {
             move *= -1;
-        }
+        }*/
         transform.Translate(move, 0, 0);
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void changeGravity()
+    {
+        rigidBody.gravityScale = invert ? -1 : 1;
+    }
+
+
+    /*public void OnTriggerEnter(Collider other)
     {
         Debug.Log("Hi");
         if (other.gameObject.layer.Equals("Background_White"))
@@ -83,5 +90,5 @@ public class GameInput : MonoBehaviour
         {
             invert = true;
         }
-    }
+    }*/
 }

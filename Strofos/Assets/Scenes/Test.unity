@@ -654,8 +654,9 @@ GameObject:
   m_Component:
   - component: {fileID: 299310909}
   - component: {fileID: 299310908}
+  - component: {fileID: 299310910}
   m_Layer: 0
-  m_Name: Time Manager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,6 +689,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &299310910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299310907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be636792f53afd34b82fc8b17261b788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &474937658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeOffset: 10
   time: 0
+  invertable: 0
 --- !u!1 &1000999729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1390,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 250
-  invert: 0
   direction: {x: 0, y: 0}
   layer:
     serializedVersion: 2
@@ -1675,6 +1688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeOffset: 10
   time: 0
+  invertable: 1
 --- !u!1 &1518183694
 GameObject:
   m_ObjectHideFlags: 0
@@ -10669,6 +10683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeOffset: 10
   time: 0
+  invertable: 0
 --- !u!1 &1932577934
 GameObject:
   m_ObjectHideFlags: 0
@@ -10790,6 +10805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeOffset: 10
   time: 0
+  invertable: 1
 --- !u!1 &1938523828
 GameObject:
   m_ObjectHideFlags: 0

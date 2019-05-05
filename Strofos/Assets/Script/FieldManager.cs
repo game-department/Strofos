@@ -1,22 +1,26 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class FieldManager : MonoBehaviour
 {
     [SerializeField] private float timeOffset;
     public float time;
-    private Timer objects;
+    private FieldManager objects;
+
+    public bool invertable;
 
     private void Start()
     {
         time = timeOffset;
-        objects = GetComponent<Timer>();
+        objects = GetComponent<FieldManager>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            if (!TimerManagement.antrian.Contains(objects)) TimerManagement.antrian.Enqueue(objects);
+            if (!TimerManagement.antrian.Contains(objects)) TimerManagement.antrian.Add(objects);
+            if (!InvertManagement.antrian.Contains(objects)) InvertManagement.antrian.Add(objects); 
         }
     }
 
@@ -24,7 +28,8 @@ public class Timer : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            if (TimerManagement.antrian.Contains(objects)) TimerManagement.antrian.Dequeue();
+            if (TimerManagement.antrian.Contains(objects)) TimerManagement.antrian.Remove(objects);
+            if (InvertManagement.antrian.Contains(objects)) InvertManagement.antrian.Remove(objects);
         }
     }
 }
