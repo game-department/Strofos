@@ -17,10 +17,14 @@
           <e p="FinishManagement.cs" t="Include" />
           <e p="FollowPlayer.cs" t="Include" />
           <e p="GameInput.cs" t="Include" />
+          <e p="GameManagement.cs" t="Include" />
+          <e p="GameVariables.cs" t="Include" />
           <e p="InvertManagement.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
           <e p="Pause.cs" t="Include" />
+          <e p="PlayerBehaviour.cs" t="Include" />
           <e p="TimerManagement.cs" t="Include" />
+          <e p="Trap.cs" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />

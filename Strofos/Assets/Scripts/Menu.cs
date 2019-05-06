@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Beta");
+        SceneManager.LoadScene("Level");
     }
 
     public void Exit()
@@ -29,6 +29,11 @@ public class Menu : MonoBehaviour
     {
         credit.SetActive(false);
         menu.SetActive(true);
+    }
+
+    public void backToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
 }

@@ -6,17 +6,36 @@ using UnityEngine.SceneManagement;
 public class FinishManagement : MonoBehaviour
 {
     public string sceneDirect;
+    private bool toggle;
+    
+    private void Start()
+    {
+        toggle = false;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag.Equals("Player"))
+        if (other.tag.Equals("Player") && !toggle)
         {
-            SceneManager.LoadScene(sceneDirect);
+            toggle = true;
+            GameVariables.freeze = true;
+            StartCoroutine("Delay");
         }
     }
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(2);
+        GameManagement.instance.fadeIn.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(sceneDirect);
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Level")
+        {
+            toggle = false;
+        }
     }
 }

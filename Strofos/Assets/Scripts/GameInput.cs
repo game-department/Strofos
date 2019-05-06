@@ -13,19 +13,21 @@ public class GameInput : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     public LayerMask layer;
+
+    private SpriteRenderer[] image;
+    
     
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        image = GetComponentsInChildren<SpriteRenderer>();
     }
 
-    void FixedUpdate()
-    {
-        Move();
-    }
 
     void Update()
     {
+        if (GameVariables.freeze) return;
+        Move();
         changeGravity();
         Jump();
     }
@@ -65,7 +67,9 @@ public class GameInput : MonoBehaviour
 
     void Move()
     {
-        float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float move = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
+        image[0].flipX = move > 0 ? false : (move < 0 ? true : false);
+        image[1].flipX = move > 0 ? false : (move < 0 ? true : false);
         /*if (invert)
         {
             move *= -1;
@@ -76,19 +80,7 @@ public class GameInput : MonoBehaviour
     public void changeGravity()
     {
         rigidBody.gravityScale = invert ? -1 : 1;
+        image[0].flipY = invert;
+        image[1].flipY = invert;
     }
-
-
-    /*public void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Hi");
-        if (other.gameObject.layer.Equals("Background_White"))
-        {
-            invert = false;
-        }
-        else if (other.gameObject.layer.Equals("Background_Black"))
-        {
-            invert = true;
-        }
-    }*/
 }

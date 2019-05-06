@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FieldManager : MonoBehaviour
 {
@@ -9,10 +11,25 @@ public class FieldManager : MonoBehaviour
 
     public bool invertable;
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
     private void Start()
     {
         time = timeOffset;
         objects = GetComponent<FieldManager>();
+    }
+
+    private bool toggle;
+    private void Update()
+    {
+        if (!toggle)
+        {
+            toggle = true;
+            objects = GetComponent<FieldManager>();
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -30,6 +47,23 @@ public class FieldManager : MonoBehaviour
         {
             if (TimerManagement.antrian.Contains(objects)) TimerManagement.antrian.Remove(objects);
             if (InvertManagement.antrian.Contains(objects)) InvertManagement.antrian.Remove(objects);
+        }
+    }
+
+    void Reset()
+    {
+        time = timeOffset;
+        toggle = false;
+        GameInput.invert = false;
+        TimerManagement.antrian = new List<FieldManager>();
+        InvertManagement.antrian = new List<FieldManager>();
+    }
+    
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Level")
+        {
+            Reset();
         }
     }
 }

@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744af088a5c5ce34c8cc2ea8bf0e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOffset: 10
+  timeOffset: 20
   time: 0
   invertable: 0
 --- !u!61 &2184346600664768271
@@ -264,24 +264,6 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: 82, y: -10, z: 0}
-    second:
-      m_TileIndex: 2
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: 122, y: -10, z: 0}
-    second:
-      m_TileIndex: 2
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: 123, y: -10, z: 0}
     second:
       m_TileIndex: 2
       m_TileSpriteIndex: 0
@@ -614,15 +596,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 124, y: 4, z: 0}
-    second:
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: 141, y: 9, z: 0}
     second:
       m_TileIndex: 1
@@ -782,16 +755,16 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: bab8e9ba276e649449e71d035dcebbfe, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 7793cc9025df8f14bbc31fae2a1d138c, type: 2}
-  - m_RefCount: 16
+  - m_RefCount: 14
     m_Data: {fileID: 11400000, guid: 6a571441a34baee4c9262711e4257577, type: 2}
   - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: c591e7e3899db094db3d918576da3f0d, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 23f587589048b79449571986bf5cfe23, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: cce74d33b56166544a52dd19866bffac, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 16
+  - m_RefCount: 14
     m_Data: {fileID: 21300022, guid: 51ced0bf2b5083742beee074e32ce44d, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300024, guid: 51ced0bf2b5083742beee074e32ce44d, type: 3}
@@ -799,12 +772,12 @@ Tilemap:
     m_Data: {fileID: 21300070, guid: 51ced0bf2b5083742beee074e32ce44d, type: 3}
   - m_RefCount: 16
     m_Data: {fileID: 21300072, guid: 51ced0bf2b5083742beee074e32ce44d, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {fileID: 21300068, guid: 51ced0bf2b5083742beee074e32ce44d, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300074, guid: 51ced0bf2b5083742beee074e32ce44d, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 68
+  - m_RefCount: 65
     m_Data:
       e00: 1
       e01: 0
@@ -823,7 +796,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 68
+  - m_RefCount: 65
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
@@ -1002,7 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744af088a5c5ce34c8cc2ea8bf0e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOffset: 10
+  timeOffset: 20
   time: 0
   invertable: 0
 --- !u!61 &2609552256346886813
@@ -1075,6 +1048,7 @@ GameObject:
   - component: {fileID: 4696254554950490727}
   - component: {fileID: 4696254554950490729}
   - component: {fileID: 4696254554950490728}
+  - component: {fileID: 1177244180928009980}
   m_Layer: 8
   m_Name: Tilemap
   m_TagString: Ground
@@ -9468,6 +9442,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!19719996 &1177244180928009980
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696254554950490726}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &4696254555231098494
 GameObject:
   m_ObjectHideFlags: 0
@@ -9609,7 +9597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744af088a5c5ce34c8cc2ea8bf0e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOffset: 10
+  timeOffset: 20
   time: 0
   invertable: 1
 --- !u!61 &1398903078692285524
@@ -9858,7 +9846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744af088a5c5ce34c8cc2ea8bf0e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOffset: 10
+  timeOffset: 20
   time: 0
   invertable: 1
 --- !u!61 &2513613081358383107
@@ -9907,7 +9895,7 @@ PrefabInstance:
     - target: {fileID: 6363961322370081359, guid: c8ff8253959df1d49a7f7f5b50335efd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.329395
+      value: 4.82
       objectReference: {fileID: 0}
     - target: {fileID: 6363961322370081359, guid: c8ff8253959df1d49a7f7f5b50335efd,
         type: 3}
@@ -9953,6 +9941,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040127812272496072, guid: c8ff8253959df1d49a7f7f5b50335efd,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.20706603
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040127812272496072, guid: c8ff8253959df1d49a7f7f5b50335efd,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.58586794
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ff8253959df1d49a7f7f5b50335efd, type: 3}
