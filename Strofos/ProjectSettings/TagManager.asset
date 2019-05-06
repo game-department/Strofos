@@ -10,6 +10,9 @@ TagManager:
   - B4
   - A
   - B
+  - Trap
+  - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -46,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 2683626451
     locked: 0
